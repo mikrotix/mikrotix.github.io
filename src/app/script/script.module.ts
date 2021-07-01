@@ -14,19 +14,24 @@ import { MatInputModule } from '@angular/material/input';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 
 import { GenerateComponent } from './generate/generate.component';
+import { RepeatTypeComponent } from './repeat-section.type';
 
 
 @NgModule({
   declarations: [
     ScriptComponent,
-    GenerateComponent
+    GenerateComponent,
+    RepeatTypeComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     ScriptRoutingModule,
     ReactiveFormsModule,
-    FormlyModule.forChild({ extras: { lazyRender: true } },),
+    FormlyModule.forChild({
+      extras: { lazyRender: true },
+      types: [{ name: 'repeat', component: RepeatTypeComponent }]
+    }),
     FormlyMaterialModule,
     MatFormFieldModule,
     MatInputModule,
