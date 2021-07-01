@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { ScriptRoutingModule } from './script-routing.module';
 import { ScriptComponent } from './script.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyMaterialModule } from '@ngx-formly/material';
 
 
 @NgModule({
@@ -11,7 +14,10 @@ import { ScriptComponent } from './script.component';
   ],
   imports: [
     CommonModule,
-    ScriptRoutingModule
+    ScriptRoutingModule,
+    ReactiveFormsModule,
+    FormlyModule.forChild({ extras: { lazyRender: true } }),
+    FormlyMaterialModule
   ]
 })
 export class ScriptModule { }
