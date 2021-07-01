@@ -6,11 +6,13 @@ import { ScriptComponent } from './script.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyMaterialModule } from '@ngx-formly/material';
+import { GenerateComponent } from './generate/generate.component';
 
 
 @NgModule({
   declarations: [
-    ScriptComponent
+    ScriptComponent,
+    GenerateComponent
   ],
   imports: [
     CommonModule,
