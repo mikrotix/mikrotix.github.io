@@ -1,4 +1,7 @@
 {
+  "title": "Load Balance NTH",
+  "description": "Script generator Load Balance for Mikrotik RouterOS",
+  "path": "assets/js/load-balance-nth.js",
   "controlFields": [
     {
       "key": "select",

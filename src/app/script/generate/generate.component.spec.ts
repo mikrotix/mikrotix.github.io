@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoadBalanceNthComponent } from './load-balance-nth.component';
+import { GenerateComponent } from './generate.component';
 
-describe('LoadBalanceNthComponent', () => {
-  let component: LoadBalanceNthComponent;
-  let fixture: ComponentFixture<LoadBalanceNthComponent>;
+describe('GenerateComponent', () => {
+  let component: GenerateComponent;
+  let fixture: ComponentFixture<GenerateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoadBalanceNthComponent ]
+      declarations: [ GenerateComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoadBalanceNthComponent);
+    fixture = TestBed.createComponent(GenerateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

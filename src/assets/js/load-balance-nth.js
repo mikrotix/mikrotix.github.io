@@ -1,5 +1,5 @@
 function generateScript(model) {
-  const ispLine = Object.keys(model).length;
+  const ispLine = Object.keys(model).length / 2;
   let results = "# Load Balance Nth\n";
   let addressList =
     "/ip firewall address-list\nadd address=192.168.0.0/16 list=LOCAL-IP\nadd address=172.16.0.0/12 list=LOCAL-IP\nadd address=10.0.0.0/8 list=LOCAL-IP\n";
@@ -26,11 +26,11 @@ function generateScript(model) {
       if (!mangle.includes(interfaceIsp)) {
         mangle += `add action=mark-connection chain=prerouting in-interface="${interfaceIsp}" new-connection-mark="cm-isp${index}" passthrough=yes\n`;
         mangle += `add action=mark-routing chain=output connection-mark="cm-isp${index}" new-routing-mark="to-isp${index}" passthrough=yes\n`;
-        mangle += `add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP new-connection-mark="cm-isp${index}" passthrough=yes connection-state=new nth=${ispLine},${index} src-address-list=LOCAL-IP\n`;
+        mangle += `add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP new-connection-mark="cm-isp${mangleNum}" passthrough=yes connection-state=new nth=${ispLine},${index} src-address-list=LOCAL-IP\n`;
         mangle += `add action=mark-routing chain=prerouting connection-mark="cm-isp1" dst-address-list=!LOCAL-IP new-routing-mark="to-isp${index}" passthrough=no src-address-list=LOCAL-IP\n`;
         mangleNum += 1;
       } else {
-        mangle += `add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP new-connection-mark="cm-isp${index}" passthrough=yes connection-state=new nth=${ispLine},${index} src-address-list=LOCAL-IP\n`;
+        mangle += `add action=mark-connection chain=prerouting dst-address-list=!LOCAL-IP new-connection-mark="cm-isp${mangleNum}" passthrough=yes connection-state=new nth=${ispLine},${index} src-address-list=LOCAL-IP\n`;
         mangleNum += 1;
       }
     }
