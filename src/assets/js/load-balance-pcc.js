@@ -26,7 +26,7 @@ function generateScript(model) {
         isp.interface
       }" passthrough=yes per-connection-classifier=both-addresses-and-ports:${
         ispLine - 1
-      }/${index - 1} src-address-list=LOCAL-IP\n`;
+      }/${index} src-address-list=LOCAL-IP\n`;
       mangle += `add action=mark-routing chain=prerouting connection-mark="cm-${isp.interface}" dst-address-list=!LOCAL-IP new-routing-mark="to-${isp.interface}" passthrough=yes src-address-list=LOCAL-IP\n`;
       mangleNum += 1;
     } else {
@@ -34,7 +34,7 @@ function generateScript(model) {
         isp.interface
       }" passthrough=yes per-connection-classifier=both-addresses-and-ports:${
         ispLine - 1
-      }/${index - 1} src-address-list=LOCAL-IP\n`;
+      }/${index} src-address-list=LOCAL-IP\n`;
       mangleNum += 1;
     }
   }

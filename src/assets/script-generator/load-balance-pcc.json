@@ -16,14 +16,20 @@
             "key": "interface",
             "type": "input",
             "templateOptions": {
-              "label": "Input interface for ISP"
+              "label": "ISP Interface",
+              "placeholder": "ether1",
+              "description": "The interface of ISP, eg `ether1` `pppoe-out1`",
+              "required": true
             }
           },
           {
             "key": "gateway",
             "type": "input",
             "templateOptions": {
-              "label": "Input gateway for ISP"
+              "label": "ISP Gateway",
+              "placeholder": "192.168.1.1",
+              "description": "The gateway of ISP",
+              "required": true
             }
           }
         ]
