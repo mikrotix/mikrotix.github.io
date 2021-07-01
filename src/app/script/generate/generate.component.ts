@@ -70,7 +70,8 @@ export class GenerateComponent implements OnInit {
   }
 
   clear(): void {
-    this.mainModel = {}
+    if (this.mainOptions.resetModel) this.mainOptions.resetModel()
+    if (this.controlOptions.resetModel) this.controlOptions.resetModel()
   }
 
 }

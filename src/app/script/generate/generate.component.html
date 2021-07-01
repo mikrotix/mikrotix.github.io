@@ -13,12 +13,14 @@
             </formly-form>
         </form>
         <mat-form-field *ngIf="result">
-            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5" [value]="result"></textarea>
+            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5"
+                [value]="result"></textarea>
         </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button (click)="generateScript(mainModel)">Generate</button>
+        <button mat-button (click)="generateScript(mainModel)"
+            [disabled]="(!controlForm.valid || !mainForm.valid)">Generate</button>
         <button mat-button *ngIf="result" [cdkCopyToClipboard]="result">Copy to clipboard</button>
-        <button mat-button (click)="clear()">Clear</button>
+        <button mat-button (click)="clear()" color="danger">Reset</button>
     </mat-card-actions>
 </mat-card>
