@@ -47,8 +47,11 @@ function updateForm(controlModel) {
   const fields = [];
   for (let index = 1; index <= value; index++) {
     let fieldInterface = {
+      id: `isp${index}`,
       key: `isp${index}`,
+      name: `isp${index}`,
       type: "input",
+      defaultValue: `ether${index}`,
       templateOptions: {
         label: `WAN ISP-${index}`,
         placeholder: `ether${index}`,
@@ -57,12 +60,16 @@ function updateForm(controlModel) {
       },
     };
     let fieldGateway = {
+      id: `gateway${index}`,
       key: `gateway${index}`,
+      name: `gateway${index}`,
       type: "input",
+      defaultValue: `192.168.${index}.1`,
       templateOptions: {
         label: `Gateway ISP-${index}`,
         placeholder: `192.168.${index}.1`,
         description: `The IP Gateway of ISP ${index}`,
+        required: true,
       },
     };
     fields.push(fieldInterface);
