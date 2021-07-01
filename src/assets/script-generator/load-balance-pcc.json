@@ -2,28 +2,32 @@
   "title": "Load Balance PCC",
   "description": "Script generator Load Balance PCC for Mikrotik RouterOS",
   "path": "assets/js/load-balance-pcc.js",
-  "controlFields": [
+  "controlFields": [],
+  "mainFields": [
     {
-      "key": "select",
-      "type": "select",
+      "key": "isp",
+      "type": "repeat",
       "templateOptions": {
-        "label": "Select ISP line",
-        "placeholder": "ISP",
-        "description": "Select Number Your ISP Line",
-        "required": true,
-        "options": [
-          { "value": 2, "label": "2 ISP" },
-          { "value": 3, "label": "3 ISP" },
-          { "value": 4, "label": "4 ISP" },
-          { "value": 5, "label": "5 ISP" },
-          { "value": 6, "label": "6 ISP" },
-          { "value": 7, "label": "7 ISP" },
-          { "value": 8, "label": "8 ISP" },
-          { "value": 9, "label": "9 ISP" },
-          { "value": 10, "label": "10 ISP" }
+        "addText": "Add ISP"
+      },
+      "fieldArray": {
+        "fieldGroup": [
+          {
+            "key": "interface",
+            "type": "input",
+            "templateOptions": {
+              "label": "Input interface for ISP"
+            }
+          },
+          {
+            "key": "gateway",
+            "type": "input",
+            "templateOptions": {
+              "label": "Input gateway for ISP"
+            }
+          }
         ]
       }
     }
-  ],
-  "mainFields": []
+  ]
 }
