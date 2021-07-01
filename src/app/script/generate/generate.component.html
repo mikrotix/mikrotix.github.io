@@ -6,10 +6,10 @@
     <mat-card-content>
         <form *ngIf="scripts.controlFields" [formGroup]="controlForm">
             <formly-form [model]="controlModel" [fields]="scripts.controlFields" [options]="controlOptions"
-                [form]="controlForm" (modelChange)="mainFields = updateForm(controlModel)"></formly-form>
+                [form]="controlForm" (modelChange)="scripts.mainFields = updateForm(controlModel)"></formly-form>
         </form>
-        <form [formGroup]="mainForm">
-            <formly-form [model]="mainModel" [fields]="mainFields" [options]="mainOptions" [form]="mainForm">
+        <form *ngIf="scripts.mainFields" [formGroup]="mainForm">
+            <formly-form [model]="mainModel" [fields]="scripts.mainFields" [options]="mainOptions" [form]="mainForm">
             </formly-form>
         </form>
         <mat-form-field *ngIf="result">

@@ -13,8 +13,8 @@ export interface Script {
   title: string;
   description: string;
   path: string;
-  controlFields?: FormlyFieldConfig[];
-  mainFields?: FormlyFieldConfig[];
+  controlFields: FormlyFieldConfig[];
+  mainFields: FormlyFieldConfig[];
 }
 @Component({
   selector: 'app-generate',
@@ -71,7 +71,7 @@ export class GenerateComponent implements OnInit {
 
   clear(): void {
     if (this.mainOptions.resetModel) this.mainOptions.resetModel()
-    if (this.controlOptions.resetModel) this.controlOptions.resetModel()
+    // if (this.controlOptions.resetModel) this.controlOptions.resetModel()
   }
 
 }
