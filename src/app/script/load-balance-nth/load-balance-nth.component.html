@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{title}}</mat-card-title>
+        <mat-card-subtitle>{{description}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="controlForm">
+            <formly-form [model]="controlModel" [fields]="controlFields" [options]="controlOptions" [form]="controlForm"
+                (modelChange)="mainFields = updateForm(controlModel)"></formly-form>
+        </form>
+        <form [formGroup]="mainForm">
+            <formly-form [model]="mainModel" [fields]="mainFields" [options]="mainOptions" [form]="mainForm">
+            </formly-form>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="generate(mainModel)">Generate</button>
+        <button mat-button (click)="clear()">Clear</button>
+    </mat-card-actions>
+</mat-card>

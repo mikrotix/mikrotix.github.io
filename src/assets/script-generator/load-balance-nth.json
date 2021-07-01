@@ -1,0 +1,20 @@
+{
+  "controlFields": [
+    {
+      "key": "select",
+      "type": "select",
+      "templateOptions": {
+        "label": "Select ISP line",
+        "placeholder": "ISP",
+        "description": "Select Number Your ISP Line",
+        "required": true,
+        "options": [
+          { "value": 2, "label": "2 ISP" },
+          { "value": 3, "label": "3 ISP" },
+          { "value": 4, "label": "4 ISP" },
+          { "value": 5, "label": "5 ISP" }
+        ]
+      }
+    }
+  ]
+}
