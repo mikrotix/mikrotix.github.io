@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 
 import { GenerateComponent } from './generate/generate.component';
@@ -35,6 +36,7 @@ import { RepeatTypeComponent } from './repeat-section.type';
     FormlyMaterialModule,
     MatFormFieldModule,
     MatInputModule,
+    MatListModule,
     ClipboardModule,
     MatCardModule,
     MatButtonModule,
